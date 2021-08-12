@@ -409,8 +409,26 @@ export default defineComponent({
       const ipArray = [
         APIRegistrationTypes.MARRIAGE_MH,
         APIRegistrationTypes.LAND_TAX_LIEN,
-        APIRegistrationTypes.MANUFACTURED_HOME_LIEN
-        // APIRegistrationTypes.MISCELLANEOUS_REGISTRATION
+        APIRegistrationTypes.MANUFACTURED_HOME_LIEN,
+        APIRegistrationTypes.LIEN_UNPAID_WAGES,
+        APIRegistrationTypes.HERITAGE_CONSERVATION_NOTICE,
+        APIRegistrationTypes.MANUFACTURED_HOME_NOTICE,
+        APIRegistrationTypes.MAINTENANCE_LIEN,
+        APIRegistrationTypes.PROCEEDS_CRIME_NOTICE,
+        APIRegistrationTypes.CARBON_TAX,
+        APIRegistrationTypes.EXCISE_TAX,
+        APIRegistrationTypes.FOREST,
+        APIRegistrationTypes.INCOME_TAX,
+        APIRegistrationTypes.INSURANCE_PREMIUM_TAX,
+        APIRegistrationTypes.LOGGING_TAX,
+        APIRegistrationTypes.MINERAL_LAND_TAX,
+        APIRegistrationTypes.MOTOR_FUEL_TAX,
+        APIRegistrationTypes.PETROLEUM_NATURAL_GAS_TAX,
+        APIRegistrationTypes.PROPERTY_TRANSFER_TAX,
+        APIRegistrationTypes.PROVINCIAL_SALES_TAX,
+        APIRegistrationTypes.RURAL_PROPERTY_TAX,
+        APIRegistrationTypes.SCHOOL_ACT,
+        APIRegistrationTypes.OTHER
       ]
       return ipArray.includes(registrationType)
     }

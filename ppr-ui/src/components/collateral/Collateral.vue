@@ -434,7 +434,21 @@ export default defineComponent({
 
     onMounted(() => {
       if (hasGeneralCollateral() && !collateral.generalCollateral) {
-        if (registrationType === APIRegistrationTypes.OTHER) {
+        if (
+          registrationType === APIRegistrationTypes.INSURANCE_PREMIUM_TAX ||
+          registrationType === APIRegistrationTypes.LOGGING_TAX ||
+          registrationType === APIRegistrationTypes.CARBON_TAX ||
+          registrationType === APIRegistrationTypes.PROVINCIAL_SALES_TAX ||
+          registrationType === APIRegistrationTypes.INCOME_TAX ||
+          registrationType === APIRegistrationTypes.MOTOR_FUEL_TAX ||
+          registrationType === APIRegistrationTypes.EXCISE_TAX
+        ) {
+          localState.generalCollateral =
+            'All the debtor’s present and after acquired personal property, including but not restricted ' +
+            'to machinery, equipment, furniture, fixtures and receivables.'
+        }
+
+        if (registrationType === APIRegistrationTypes.LIEN_UNPAID_WAGES) {
           localState.generalCollateral =
             'All the Personal Property of the Debtor'
         }

@@ -38,11 +38,19 @@ export const useVehicle = (props, context) => {
   })
 
   const getVehicle = () => {
-    const vehicles: VehicleCollateralIF[] = getAddCollateral.value.vehicleCollateral
+    const vehicles: VehicleCollateralIF[] =
+      getAddCollateral.value.vehicleCollateral
     if (props.activeIndex >= 0) {
       localState.currentVehicle = vehicles[props.activeIndex]
     } else {
-      localState.currentVehicle = { id: -1, type: '', serialNumber: '', model: '', make: '', year: '' }
+      localState.currentVehicle = {
+        id: -1,
+        type: '',
+        serialNumber: '',
+        model: '',
+        make: '',
+        year: ''
+      }
     }
   }
 
@@ -80,6 +88,9 @@ export const useVehicle = (props, context) => {
       APIRegistrationTypes.MARRIAGE_MH,
       APIRegistrationTypes.LAND_TAX_LIEN,
       APIRegistrationTypes.MANUFACTURED_HOME_LIEN,
+      APIRegistrationTypes.MANUFACTURED_HOME_NOTICE,
+      APIRegistrationTypes.MAINTENANCE_LIEN,
+      APIRegistrationTypes.PROCEEDS_CRIME_NOTICE,
       APIRegistrationTypes.SALE_OF_GOODS
     ]
     return vhArray.includes(registrationType)
@@ -91,9 +102,25 @@ export const useVehicle = (props, context) => {
       APIRegistrationTypes.SALE_OF_GOODS,
       APIRegistrationTypes.FORESTRY_CONTRACTOR_LIEN,
       APIRegistrationTypes.FORESTRY_CONTRACTOR_CHARGE,
-      APIRegistrationTypes.FORESTRY_SUBCONTRACTOR_LIEN
-      // APIRegistrationTypes.MISCELLANEOUS_REGISTRATION,
-      // APIRegistrationTypes.MISCELLANEOUS_OTHER
+      APIRegistrationTypes.FORESTRY_SUBCONTRACTOR_LIEN,
+      APIRegistrationTypes.LIEN_UNPAID_WAGES,
+      APIRegistrationTypes.HERITAGE_CONSERVATION_NOTICE,
+      APIRegistrationTypes.MAINTENANCE_LIEN,
+      APIRegistrationTypes.PROCEEDS_CRIME_NOTICE,
+      APIRegistrationTypes.CARBON_TAX,
+      APIRegistrationTypes.EXCISE_TAX,
+      APIRegistrationTypes.FOREST,
+      APIRegistrationTypes.INCOME_TAX,
+      APIRegistrationTypes.INSURANCE_PREMIUM_TAX,
+      APIRegistrationTypes.LOGGING_TAX,
+      APIRegistrationTypes.MINERAL_LAND_TAX,
+      APIRegistrationTypes.MOTOR_FUEL_TAX,
+      APIRegistrationTypes.PETROLEUM_NATURAL_GAS_TAX,
+      APIRegistrationTypes.PROPERTY_TRANSFER_TAX,
+      APIRegistrationTypes.PROVINCIAL_SALES_TAX,
+      APIRegistrationTypes.RURAL_PROPERTY_TAX,
+      APIRegistrationTypes.SCHOOL_ACT,
+      APIRegistrationTypes.OTHER
     ]
     return ghArray.includes(registrationType)
   }
@@ -102,7 +129,8 @@ export const useVehicle = (props, context) => {
     const mhArray = [
       APIRegistrationTypes.MARRIAGE_MH,
       APIRegistrationTypes.LAND_TAX_LIEN,
-      APIRegistrationTypes.MANUFACTURED_HOME_LIEN
+      APIRegistrationTypes.MANUFACTURED_HOME_LIEN,
+      APIRegistrationTypes.MANUFACTURED_HOME_NOTICE
     ]
     return mhArray.includes(registrationType)
   }
